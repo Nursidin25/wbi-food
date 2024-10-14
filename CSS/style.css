@@ -218,11 +218,12 @@ body {
 }
 .menu p,
 .contact p {
+  color: #000000;
   text-align: center;
   max-width: 30rem;
   margin: auto;
   font-size: 1.2rem;
-  font-weight: 100;
+  font-weight: 500;
   line-height: 1.6;
 }
 
@@ -231,6 +232,7 @@ body {
   flex-wrap: wrap;
   margin-top: 5rem;
   justify-content: center;
+  color: #000000;
 }
 
 .menu .row .menu-card {
