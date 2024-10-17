@@ -48,7 +48,7 @@ body {
 }
 
 .navbar .navbar-nav a {
-  color: #03001c;
+  color: var(--primary);
   display: inline-block;
   font-size: 1.3rem;
   margin: 0 1rem;
@@ -94,6 +94,52 @@ body {
 
 #hamburger-menu {
   display: none;
+}
+
+/* Navbar Search Form */
+.navbar .search-form {
+  position: absolute;
+  top: 100%;
+  right: 7%;
+  background-color: #fff;
+  width: 50rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  transition: 0.3s;
+  transform-origin: top;
+  transform: scaleY(0);
+  -webkit-transform: scaleY(0);
+  -moz-transform: scaleY(0);
+  -ms-transform: scaleY(0);
+  -o-transform: scaleY(0);
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+
+.navbar .search-form.active {
+  transform: scaleY(1);
+  -webkit-transform: scaleY(1);
+  -moz-transform: scaleY(1);
+  -ms-transform: scaleY(1);
+  -o-transform: scaleY(1);
+}
+
+.navbar .search-form input {
+  height: 100%;
+  width: 100%;
+  font-size: 1.6rem;
+  color: var(--primary);
+  padding: 1rem;
+}
+
+.navbar .search-form label {
+  cursor: pointer;
+  font-size: 2rem;
+  margin-right: 1.5rem;
+  color: var(--primary);
 }
 
 /* Hero Section */
@@ -163,6 +209,7 @@ body {
 /* About Section */
 .about,
 .menu,
+.products,
 .contact {
   padding: 8rem 7% 1.4rem;
   background-color: rgb(0, 108, 93);
@@ -170,6 +217,7 @@ body {
 
 .about h2,
 .menu h2,
+.products h2,
 .contact h2 {
   text-align: center;
   font-size: 2.6rem;
@@ -177,8 +225,16 @@ body {
   color: #ff632a;
 }
 
+.products p {
+  text-align: center;
+  font-weight: 500;
+
+  color: #000000;
+}
+
 .about h2 span,
 .menu h2 span,
+.products h2 span,
 .contact h2 span {
   color: var(--primary);
 }
@@ -258,6 +314,75 @@ body {
 
 .menu .row .menu-card .menu-card-title {
   margin: 1.5rem auto 1rem;
+}
+
+/* Product Section  */
+.products .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+  margin-top: 4rem;
+}
+
+.products .product-card {
+  text-align: center;
+  border: 1px solid #3c2a21;
+  padding: 2rem;
+}
+.products .product-icons {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.products .product-icons a {
+  width: 4rem;
+  height: 4rem;
+  color: #b8b8b8;
+  margin: 0.3rem;
+  border: 1px solid #3c2a21;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.products .product-icons a:hover {
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.products .product-image img {
+  height: 25rem;
+}
+
+.products .product-content h3 {
+  font-size: 2rem;
+}
+
+.products .product-stars {
+  font-size: 1.7rem;
+  padding: 0.8rem;
+  color: var(--primary);
+}
+
+.products .product-stars .star-full {
+  fill: var(--primary);
+}
+
+.products .product-price {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.products .product-price span {
+  text-decoration: line-through;
+  font-weight: lighter;
+  font-size: 1rem;
 }
 
 /* Contact Section */
@@ -371,7 +496,7 @@ footer .credit a {
     position: absolute;
     top: 100%;
     right: -100%;
-    background-color: slategray;
+    background-color: #b8b8b8;
     width: 30rem;
     height: 100vh;
     transition: 0/3s;
@@ -386,7 +511,7 @@ footer .credit a {
   }
 
   .navbar .navbar-nav a {
-    color: var(--bg);
+    color: var(--primary);
     display: block;
     margin: 1.5rem;
     padding: 0.5rem;
@@ -403,6 +528,11 @@ footer .credit a {
     -moz-transform: scaleX(0.2);
     -ms-transform: scaleX(0.2);
     -o-transform: scaleX(0.2);
+  }
+
+  .navbar .search-form {
+    width: 90%;
+    right: 2rem;
   }
 
   .about .row {
